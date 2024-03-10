@@ -18,11 +18,12 @@ app.use(cookieParser());
 
 //route are import here..
 const user = require("./routes/userRoutes");
-
+const sport = require("./routes/sport");
 
 
 
 app.use("/api/v1/user/", user);
+app.use("/api/v1/sport/", sport);
 
 
 app.get("/", (req, res)=>{
