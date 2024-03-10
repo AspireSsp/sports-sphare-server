@@ -34,7 +34,28 @@ const userSchema = new mongoose.Schema({
         type : String,
         default : "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
     },
-    
+    banner: {
+        type : String,
+        default : "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+    },
+    description: {
+        type: String,
+    },
+    location: {
+        name: { type: String, required: true },
+        lat: { type: Number, required: true },
+        lon: { type: Number, required: true },
+    },
+    sports: {
+        type: [
+            {
+                name: { type: String, required: true },
+                level: { type: String, required: true },
+            }
+        ],
+    },
+}, {
+    timestamps: true,
 });
 
 //hashing the password...
